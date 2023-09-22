@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} | Start Quiz{% endblock %}
+{% block content %} 
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <button class="" type="submit">Start Quiz</button>
+    </div>
+</form>
+{% endblock %}

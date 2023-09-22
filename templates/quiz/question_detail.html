@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Questions{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>Q{{question.id}} of {{total}} </p>
+        <p>{{ question.question }}</p>
+        <label>
+            <input type="radio" name="question_{{ question.id }}" value="True"> True
+        </label>
+        <label>
+            <input type="radio" name="question_{{ question.id }}" value="False"> False
+        </label>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Submit</button>
+        </div>
+    </form>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit"> 
+            <a href="{% url 'start_quiz' %}"> Restart Quiz</a></button>
+    </div>
+{% endblock %}
+
+

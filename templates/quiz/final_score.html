@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} | Your Score {% endblock %}
+{% block content %} 
+<h1>Your final Score Is:</h1>
+<br>
+<h1>{{ score }}</h1>
+<div class="form-group">
+    <button class="btn btn-outline-info" type="submit"> 
+        <a href="{% url 'start_quiz' %}"> Restart Quiz</a></button>
+</div>
+{% endblock %}
